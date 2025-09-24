@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - El Rharbaoui Rayan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to bottom right, black, purple, blue);
+    }
+    nav {
+      width: 20%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    nav button.active {
+      background: dodgerblue;
+    }
+    nav button:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    main {
+      flex: 1;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button class="active" onclick="showSection('accueil')">Accueil</button>
+    <button onclick="showSection('stage')">Stage</button>
+    <button onclick="showSection('projets')">Projets</button>
+    <button onclick="showSection('veille')">Veille</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+  <main>
+  <h1 id="titre-accueil">El Rharbaoui Rayan</h1>
+    <div id="accueil" class="content">
+  <img src="https://i.imgur.com/0QwQKQp.png" alt="CV El Rharbaoui Rayan" style="max-width:350px;width:100%;border-radius:20px;box-shadow:0 4px 24px #0002;margin-bottom:24px;">
+  Bonjour, bienvenue sur mon portfolio je m'appelle <b>Rayan El Rharbaoui</b>, élève en BTS SIO. 
+  Vous trouverez ici mes stages, projets, veilles et mon contact.
+    </div>
+    <div id="stage" class="content" style="display:none">
+    </div>
+    <div id="projets" class="content" style="display:none">
+      Présentation de mes projets scolaires et personnels en développement et réseau.
+    </div>
+    <div id="veille" class="content" style="display:none">
+      Veille technologique autour de la cybersécurité et des nouvelles technologies.
+    </div>
+    <div id="contact" class="content" style="display:none">
+      <div style="display:flex;align-items:center;margin-bottom:24px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Yahoo%21_Mail_icon.png" alt="yahoo" style="width:48px;height:48px;margin-right:16px;">
+        Email : erayan007@yahoo.com
+      </div>
+      <div style="display:flex;align-items:center;margin-bottom:24px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Phone_icon_green.svg" alt="phone" style="width:48px;height:48px;margin-right:16px;">
+        Telephone : 0750154878
+      </div>
+      <div style="display:flex;align-items:center;margin-bottom:24px;">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github" style="width:48px;height:48px;margin-right:16px;filter:grayscale(1);">
+        Github : <a href="https://github.com/QLF0" style="color:#fff;text-decoration:underline;" target="_blank">https://github.com/QLF0</a>
+      </div>
+      <div style="display:flex;align-items:center;margin-bottom:24px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" style="width:48px;height:48px;margin-right:16px;">
+        Linkedin : <a href="https://www.linkedin.com/in/rayan-el-rharbaoui-791b27384/" style="color:#fff;text-decoration:underline;" target="_blank">https://www.linkedin.com/in/rayan-el-rharbaoui-791b27384/</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll(".content").forEach(el => el.style.display = "none");
+      document.getElementById(id).style.display = "block";
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      event.target.classList.add("active");
+      document.getElementById("titre-accueil").style.display = (id === "accueil") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
